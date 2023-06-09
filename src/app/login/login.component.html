@@ -1,0 +1,30 @@
+<div class="container">
+    <h1 class="text-center">Login</h1>
+
+        <form  (ngSubmit)="onSubmit()" [formGroup]="reactiveForm" style="width: 500px; position: relative;height: 200px;">
+            <div style="margin-top: 20px;">
+              <input type="text" class="form-control" placeholder="Enter User Name"
+              name="userName"  formControlName="userName">
+              <div *ngIf="submitted && f['userName'].errors">
+                <div *ngIf="f['userName'].errors['required']" style="color:red">
+                  User Name is required
+                </div>
+              </div>
+              <br>
+
+
+            <input type="password" class="form-control"placeholder="Enter password"
+              name="password" formControlName="password">
+              <div *ngIf="submitted && f['password'].errors">
+                <div *ngIf="f['password'].errors['required']" style="color:red">
+                  password is required
+                </div>
+              </div>
+            </div>
+            
+           <button  class="btn btn-success" style="margin-top: 50px; width: 100px;">Log in</button> 
+           <p style="margin:-20px 150px; position: absolute;">Not an existing user <a href="/signup">Signup</a></p>
+        </form>
+      </div>
+    
+  
